@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github Oauth</title>
+  <style>
+    body, html {
+      padding: 0;
+      margin: 0;
+      background: #f4f5f5;
+      height: 100%;
+    }
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: #fff;
+      padding: 30px;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .login {
+      color: #fff;
+      background-color: #28a745;
+      border-color: #28a745;
+      line-height: 1.5;
+      padding: 6px 12px;
+      border-radius: 4px;
+      box-sizing: border-box;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color .15s ease-in-out,border-color .15s ease-in-out;
+    }
+    .login:hover {
+      background-color: #218838;
+      border-color: #1e7e34;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="login">Login With Github</div>
+  </div>
+  <script>
+    window.onload = () => {
+      if(document.querySelector('.login')) {
+        document.querySelector('.login').addEventListener('click', () => {
+          const client_id = '<%= clientId %>';
+          const authorize_uri = '<%= authorizeUrl %>';
+          const redirect_uri = '<%= redirectUrl %>';
+          window.location.href = `${authorize_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}`;
+        })
+      }
+    }
+  </script>
+</body>
+</html>

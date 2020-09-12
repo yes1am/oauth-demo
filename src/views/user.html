@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Hi, <%= userName %> </title>
+  <style>
+    body, html {
+      padding: 0;
+      margin: 0;
+      background: #f4f5f5;
+      height: 100%;
+    }
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #fff;
+      padding: 30px;
+      height: 100%;
+      box-sizing: border-box;
+      color: #72777b;
+      line-height: 1.5;
+    }
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+    }
+    .userName:link, .userName:hover, .userName:active, .userName:visited {
+      color: #007fff;
+      text-decoration: none;
+    }
+    .bio {
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="avatar" src="<%= avatar %>" alt="">
+    <div class="userNameContainer">
+      <a class="userName" target="_blank" href="<%= userLink %>"><%= userName %></a>
+    </div>
+    <div class="location"><%= location %></div>
+    <div class="bio"><%= bio %></div>
+  </div>
+</body>
+</html>
